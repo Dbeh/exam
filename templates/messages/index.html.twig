@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exam | Simple Chat{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="col-6 col-xl-6 col-lg-6 col-md-12 text-sm-12" style="margin: 0 auto">
+
+            <h1 class="text-center mt-5">Simple Chat Test Project</h1>
+
+            <div class="row mt-5">
+                <div class="col-6 col-xl-6 col-lg-6 col-md-12 text-sm-12" style="margin: 0 auto">
+                    <form class="form-inline">
+                        <div class="flex-fill mr-2">
+                            <input type="text" id="message" placeholder="Let's type something here!" class="form-control w-100">
+                        </div>
+                        <input type="submit" id="send" value="Send" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="card card-body w-100">
+                    <div id="MessageTable">
+                        {{ render(controller('App\\Controller\\MessagesController::showMessages')) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

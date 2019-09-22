@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col border-top-0">created</th>
+        <th scope="col border-top-0">text</th>
+    </tr>
+    </thead>
+        <tbody>
+        {% for message in messages %}
+            <tr>
+                <td scope="row">{{ message.createAt|date("Y-m-d H:i:s") }}</td>
+                <td>{{message.message}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
